@@ -35,6 +35,9 @@ app.get('/con', function(req, res) {
   // console.log(req);
   res.render('lz_connect', {list: [1, 2, 3, 4 ,5, 6, 7, 8, 9]});
 });
+app.get('/h', function(req, res) {
+  res.render('lz_h_head');
+});
 app.use('/', index);
 app.use('/users', users);
 
