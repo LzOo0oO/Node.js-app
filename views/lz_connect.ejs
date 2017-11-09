@@ -1,0 +1,176 @@
+<head>
+  <link rel="stylesheet" href="/font_picture/iconfont.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/lz_css.css">
+  <script src="/js/jquery.min.js" charset="utf-8"></script>
+</head>
+<%- include("lz_head") %>
+
+<div class="lz-body-con">
+  <div class="connect">
+    <div class="lz-con-head">
+      <div class="lz-con-header">
+        <div>
+          <input type="text" placeholder="请输入关键字查询">
+          <span class="icon iconfont icon-wxbdingwei"></span>
+        </div>
+        <ul>
+          <li>收益计算器</li>
+          <li>预约投标</li>
+        </ul>
+      </div>
+
+      <div class="lz-con-head-b">
+        <dl>
+          <dt>产品期限:</dt>
+          <dd class="active">全部</dd>
+          <dd id="t1">1-3个月</dd>
+          <dd id="t2">4-9个月</dd>
+          <dd id="t3">10个月以上</dd>
+        </dl>
+        <dl>
+            <dt>产品收益:</dt>
+            <dd class="active">全部</dd>
+            <dd>9%以下</dd>
+            <dd>9-10%</dd>
+            <dd>10-11%</dd>
+            <dd>11-12%</dd>
+            <dd>12%以上</dd>
+        </dl>
+        <dl>
+            <dt>产品类型:</dt>
+            <dd class="active">全部</dd>
+            <dd>微投资<span class="hot" style="display: inline;"></span></dd>
+
+            <dd>月月盈</a></dd>
+            <dd>海航通宝</dd>
+            <dd>微金宝</dd>
+            <dd>微转让</dd>
+            <dd>稳赢保<span class="hot" style="display: inline;"></span></dd>
+        </dl>
+        <a href="/"><img src="/images/aboutUs.jpg" alt=""></a>
+      </div>
+    </div>
+
+
+    <div class="lz-con-con">
+      <div class="lz-con-con-header">
+        <dl>
+          <dt>排序方式:</dt>
+          <dd>默认排序</dd>
+          <dd>年化利率</dd>
+          <dd>投资期限</dd>
+          <dd>产品类型</dd>
+          <dd>产品星级</dd>
+        </dl>
+      </div>
+
+
+      <div class="lz-con-con-con">
+        <h1>数据1</h1>
+        <ul>
+          <li>
+            <span>4</span>
+            <sub>%</sub>
+            <p>测算年化收益率</p>
+          </li>
+          <li>
+            <p>借款期限：<span>560天</span></p>
+            <p>还款方式：<span>利随本清</span></p>
+          </li>
+          <li>
+            <p>筹集金额：<span>60万元</span></p>
+            <p>产品星级：
+              <div>
+                <div style="width: ;100%"></div>
+              </div>
+            </p>
+          </li>
+          <li>
+            <p>投资进度：<span>90%</span><i><i></i></i></p>
+            <p>可投金额：<span>87100元</span></p>
+          </li>
+          <li>
+            <div>立即加入</div>
+          </li>
+        </ul>
+      </div>
+      <% for (data of list) {%>
+        <div class="lz-con-con-con">
+          <h1>数据1</h1>
+          <ul>
+            <li>
+              <span>4</span>
+              <sub>%</sub>
+              <p>测算年化收益率</p>
+            </li>
+            <li>
+              <p>借款期限：<span>560天</span></p>
+              <p>还款方式：<span>利随本清</span></p>
+            </li>
+            <li>
+              <p>筹集金额：<span>60万元</span></p>
+              <p>产品星级：
+                <div>
+                  <div style="width: ;100%"></div>
+                </div>
+              </p>
+            </li>
+            <li>
+              <p>投资进度：<span>90%</span><i><i></i></i></p>
+              <p>可投金额：<span>87100元</span></p>
+            </li>
+            <li>
+              <div>立即加入</div>
+            </li>
+          </ul>
+        </div>
+      <% } %>
+      <!-- Income 收益 -->
+      <!-- <% for (data of list) {%>
+      <div class="lz-con-con-con">
+        <h1><% data.title %></h1>
+        <ul>
+          <li>
+            <span><% data.incomeNum %></span>
+            <sub><% data.income %></sub>
+            <p>测算年化收益率</p>
+          </li>
+          <li>
+            <p>借款期限：<span><% data.year %></span></p>
+            <p>还款方式：<span><% data.yearType %></span></p>
+          </li>
+          <li>
+            <p>筹集金额：<span><% data.money %></span></p>
+            <p>产品星级：
+              <div>
+                <div style=`width: ${<% data.star %>};`></div>
+              </div>
+            </p>
+          </li>
+          <li>
+            <p>投资进度：<span><% data.program %></span><i><i  style=`width: ${<% data.program %>};`></i></i></p>
+            <p>可投金额：<span><% data.mayMoney %></span></p>
+          </li>
+          <li>
+            <div data-target=`${<% data.src %>}`>立即加入</div>
+          </li>
+        </ul>
+      </div>
+      <% } %> -->
+
+
+    </div>
+
+  </div>
+</div>
+
+<%- include("lz_foot") %>
+
+
+<script type="text/javascript">
+  $(".lz-con-head-b > dl").children().click(function() {
+    console.log(this);
+    $(this).attr("class", "active").siblings().removeAttr("class");
+  });
+</script>

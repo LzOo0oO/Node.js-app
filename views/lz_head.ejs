@@ -1,0 +1,49 @@
+  <head>
+    <link rel="stylesheet" href="/font_picture/iconfont.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/lz_css.css">
+    <script src="/js/jquery.min.js" charset="utf-8"></script>
+  </head>
+<div class="lz-body-head">
+  <div class="connect">
+    <div class="lz-body-head-header">
+      <ul>
+        <li>客服电话：4006-89-4006/010-53563799/9:00~21:00<span>|</span></li>
+        <li>在线客服<span>|</span></li>
+        <li>移动客户端<span>|</span></li>
+        <li>微信公众号二维码<span>|</span></li>
+        <li>财富登录</li>
+      </ul>
+      <ul>
+        <li>进入存管专区</li>
+        <li>帮助中心<span>|</span></li>
+        <li>登入 | 注册</li>
+      </ul>
+    </div>
+
+
+    <div class="lz-body-head-body">
+      <div>
+        <a href="/"><i class="icon iconfont icon-huanhuobz"></i>微金所</a>
+        <a href="/"><img src="/images/anniversary.png" alt=""></a>
+      </div>
+
+      <ul id="lz-body-head-body">
+        <li class="active">首页</li>
+        <li>我要投资</li>
+        <li>安全保障</li>
+        <li>新手专区</li>
+        <li>新闻公告</li>
+        <li>关于我们</li>
+        <li><img src="/images/anonymous.jpg" alt="">我的账户</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<script type="text/javascript">
+  $("#lz-body-head-body").children("li").click(function() {
+    console.log(this);
+    $(this).attr("class", "active").siblings().removeAttr("class");
+  });
+</script>
