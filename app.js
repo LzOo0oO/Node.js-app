@@ -14,6 +14,7 @@ var z = require('./routes/z');
 var g = require('./routes/g');
 var l = require('./routes/l');
 
+
 var app = express();
 
 // app.listen(8000, () => {
@@ -34,7 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/head', function(req, res) {
   // console.log(req);
-  res.render('lz_foot');
+  res.sendFile('html/G_deng.html');
+  // res.render('lz_foot');
 });
 
 app.get('/con', function(req, res) {
@@ -48,6 +50,7 @@ app.use('/h', h);
 app.use('/z', z);
 app.use('/g', g);
 app.use('/l', l);
+
 app.use('/users', users);
 
 // catch 404 and forward to error handler
