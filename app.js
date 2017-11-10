@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var lz = require('./routes/lz');
 
 var app = express();
 
@@ -35,10 +36,8 @@ app.get('/con', function(req, res) {
   // console.log(req);
   res.render('lz_connect', {list: [1, 2, 3, 4 ,5, 6, 7, 8, 9]});
 });
-app.get('/h', function(req, res) {
-  res.render('lz_h_head');
-});
 app.use('/', index);
+app.use('/lz', lz);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/stylesheets/lz_css.css">
   <script src="/js/jquery.min.js" charset="utf-8"></script>
 </head>
-<%- include("lz_h_head") %>
+<%- include("lz_head") %>
 
 <div class="lz-body-con">
   <div class="connect">
@@ -127,37 +127,37 @@
         </div>
       <% } %>
       <!-- Income 收益 -->
-      <!-- <% for (data of list) {%>
+      <% for (data of list) {%>
       <div class="lz-con-con-con">
-        <h1><% data.title %></h1>
+        <h1><%= title %></h1>
         <ul>
           <li>
-            <span><% data.incomeNum %></span>
-            <sub><% data.income %></sub>
+            <span><%= incomeNum %></span>
+            <sub><%= income %></sub>
             <p>测算年化收益率</p>
           </li>
           <li>
-            <p>借款期限：<span><% data.year %></span></p>
-            <p>还款方式：<span><% data.yearType %></span></p>
+            <p>借款期限：<span><%= year %>天</span></p>
+            <p>还款方式：<span><%= yearType %></span></p>
           </li>
           <li>
-            <p>筹集金额：<span><% data.money %></span></p>
+            <p>筹集金额：<span><%= money %></span></p>
             <p>产品星级：
               <div>
-                <div style=`width: ${<% data.star %>};`></div>
+                <div style="width: <%= star %>%;"></div>
               </div>
             </p>
           </li>
           <li>
-            <p>投资进度：<span><% data.program %></span><i><i  style=`width: ${<% data.program %>};`></i></i></p>
-            <p>可投金额：<span><% data.mayMoney %></span></p>
+            <p>投资进度：<span><%= program %>%</span><i><i  style="width: <%= program %>%;"></i></i></p>
+            <p>可投金额：<span><%= mayMoney %></span></p>
           </li>
           <li>
-            <div data-target=`${<% data.src %>}`>立即加入</div>
+            <div data-target= <%= src %>>立即加入</div>
           </li>
         </ul>
       </div>
-      <% } %> -->
+      <% } %>
 
 
     </div>
