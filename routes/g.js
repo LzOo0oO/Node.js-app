@@ -1,10 +1,10 @@
 var express = require('express');
-var q = express.Router();
+var g = express.Router();
 
 
 
 /* GET home page. */
-q.get('/', function(req, res, next) {
+g.get('/', function(req, res, next) {
   res.render('q_xw');
 });
 
@@ -21,4 +21,4 @@ q.get('/', function(req, res, next) {
 
 
 
-module.exports = q;
+module.exports = g;
