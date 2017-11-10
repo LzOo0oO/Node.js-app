@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title></title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .new-bg {
+      background-color: #f3f3f3;
+      padding: 30px 0;
+      /*height: 1000px;*/
+    }
+
+    .news-box {
+      background: #f3f3f3;
+      border: 1px #e3e3e3 solid;
+      width: 1200px;
+      margin: 0 auto;
+      /*height: 1000px;*/
+    }
+
+    .news-box .news-left {
+      float: left;
+      width: 18%;
+    }
+
+    .news-box .news-left ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .news-box .news-left ul .active {
+
+      display: block;
+      position: relative;
+      left: -2px;
+
+      cursor: pointer;
+      height: 50px;
+      border-right: none;
+    }
+
+    .news-box .news-left ul li:hover {
+      background: #fff;
+      border-left: 3px #dd2c37 solid;
+    }
+
+    .news-box .news-left ul li {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      color: #333;
+      border: 1px #e3e3e3 solid;
+      text-align: center;
+      background: #f8f8f8;
+      border-left: none;
+      border-top: none;
+    }
+
+    .news-box .news-right {
+      background: #fff;
+      display: table;
+      padding: 25px 53px;
+      font-size: 14px;
+      height: 100%;
+      /*width: 934px;*/
+    }
+
+    .n-dl {
+      line-height: 28px;
+      margin-bottom: 30px;
+    }
+
+    .n-dl .n-title,
+    #rate-report a .h4 {
+      font-size: 18px;
+      font-weight: normal;
+      padding: 5px 0;
+    }
+
+    .n-dl dd,
+    #rate-report .h4 {
+      line-height: 28px;
+      font-weight: normal;
+    }
+
+    .n-dl .n-date {
+      color: #6d6e70;
+      font-size: 12px;
+    }
+
+    .n-dl .n-content {
+      color: #6f6f6f;
+    }
+
+    .n-dl .n-more {
+      color: #c2502e;
+    }
+
+    #newsHistory {
+      padding-left: 70px;
+    }
+
+    .history_content {
+      right: inherit;
+      padding-left: 230px;
+      left: inherit;
+      top: 12px;
+      border-left: 6px #e6eaed solid;
+      position: relative;
+      padding-bottom: 1px;
+    }
+
+    .history_bs {
+      width: 6px;
+      position: absolute;
+      left: -6px;
+      top: -1px;
+      height: 70px;
+      border-radius: 5px;
+      background: #ffa412;
+    }
+
+    .history_now {
+      position: absolute;
+      top: 25px;
+      font-size: 16px;
+      left: -8%;
+    }
+    .history_content .history_content_right {
+    margin-left: inherit;
+    top: inherit;
+    padding: 0 20px 0 50px;
+    border-left: 5px #e6eaed solid;
+    }
+
+    .history_content_right div {
+      position: relative;;
+      left: inherit;
+      padding-left: 130px;
+    }
+
+    .history_content_right div span {
+      left: -230px;
+      top: 30px;
+    }
+
+    .history_2014 {
+      position: absolute;
+      font-size: 18px;
+    }
+
+    .history_content_right div .his-tl {
+      top: 16px;
+      left: -1%;
+      position: absolute;
+      color: #e6e9ee;
+      font-size: 40px;
+    }
+
+    .history_content_right div img {
+      position: absolute;
+      left: -11%;
+      top: 0px;
+    }
+
+    .history_content_right div p {
+      position: absolute;
+      left: -30%;
+      top: 26px;
+      padding: 6px 3px;
+      background: #7cd1fa;
+      text-align: center;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .history_content_right div dl {
+      max-width: 400px;
+      background: #e6e9ee;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 50px;
+      margin-left: inherit;
+      right: 30%;
+      top: 30px;
+      position: relative;
+    }
+
+    .history_content_right div dl dt {
+      line-height: 25px;
+      letter-spacing: 1px;
+      font-size: 18px;
+      text-indent: 3px;
+    }
+
+    .history_content_right div dl dd {
+      line-height: 25px;
+      letter-spacing: 1px;
+    }
+
+    .report-box .h4 {
+    font-size: 18px;
+    color: #222;
+    padding-bottom: 25px;
+    }
+    .report-box .report-content {
+    color: #666;
+    line-height: 28px;
+    text-indent: 30px;
+    margin-bottom: 30px;
+    }
+    .report-box .report-list li {
+    color: #444;
+    height: 2px;
+    line-height: 43px;
+    padding: 12px 50px 45px;
+    background: url("images/rate.jpg") no-repeat 6px 13px;
+    border-bottom: 1px solid #c6cbcf;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <%- include("lz_h_head")%>
+
+
+
+
+
+  <div class="new-bg">
+    <div class="news-box">
+      <div class="news-left">
+        <ul>
+          <li class="active" index="0">
+            <a href="#">全部新闻</a>
+          </li>
+          <li class="active" index="0">
+            <a href="#">媒体报道</a>
+          </li>
+          <li class="active" index="0">
+            <a href="#">微金所头条</a>
+          </li>
+          <li class="active" index="0">
+            <a href="#">行业资讯</a>
+          </li>
+          <li class="active" index="0">
+            <a href="#">更新历史</a>
+          </li>
+          <li class="active" index="0">
+            <a href="#">利率报告</a>
+          </li>
+          <li class="active" index="0">
+            <a href="#">专题列表</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="news-right">
+        <div class="news-all">
+
+          <div class="">
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-11-06</small>
+                <br>
+                <p class="n-content">
+                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【新浪网】 互联网金融平台微金所实缴注册资本增至1亿元</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-09-19</small>
+                <br>
+                <p class="n-content">
+                  【新浪网】互联网金融平台微金所实缴注册资本增至1亿元2017年7月24日，互联网金融平台微金所在其官方微信公众号发布了“微金所注册资本增至1亿元 夯实资本 更上一层”的公告，正式宣布，微金所经工商部门 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-11-06</small>
+                <br>
+                <p class="n-content">
+                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微动态】《搜狐财经》《国际在线》等多家媒体报道：股权质押或成互联网金融资产端新走向</a>
+            </dt>
+              <dd>
+                <small class="n-date">2016-10-17</small>
+                <br>
+                <p class="n-content">
+                  2016年互联网金融真正进入监管元年，最严监管的强势落地让互联网金融行业加速进入洗牌期。“13条禁令”更缩小了平台的业务空间，使本不充裕的优质资产变的更加匮乏。在监管元年以及优质资产“资产荒”双重压力 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="">
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-11-06</small>
+                <br>
+                <p class="n-content">
+                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【新浪网】 互联网金融平台微金所实缴注册资本增至1亿元</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-09-19</small>
+                <br>
+                <p class="n-content">
+                  【新浪网】互联网金融平台微金所实缴注册资本增至1亿元2017年7月24日，互联网金融平台微金所在其官方微信公众号发布了“微金所注册资本增至1亿元 夯实资本 更上一层”的公告，正式宣布，微金所经工商部门 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-11-06</small>
+                <br>
+                <p class="n-content">
+                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微动态】《搜狐财经》《国际在线》等多家媒体报道：股权质押或成互联网金融资产端新走向</a>
+            </dt>
+              <dd>
+                <small class="n-date">2016-10-17</small>
+                <br>
+                <p class="n-content">
+                  2016年互联网金融真正进入监管元年，最严监管的强势落地让互联网金融行业加速进入洗牌期。“13条禁令”更缩小了平台的业务空间，使本不充裕的优质资产变的更加匮乏。在监管元年以及优质资产“资产荒”双重压力 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="">
+
+            <dl class="n-dl">
+              <dt class="n-title">
+                <a href="#">【新浪网】 互联网金融平台微金所实缴注册资本增至1亿元</a>
+              </dt>
+              <dd>
+                <small class="n-date">2017-09-19</small>
+                <br>
+                <p class="n-content">
+                  【新浪网】互联网金融平台微金所实缴注册资本增至1亿元2017年7月24日，互联网金融平台微金所在其官方微信公众号发布了“微金所注册资本增至1亿元 夯实资本 更上一层”的公告，正式宣布，微金所经工商部门 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+
+
+
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【中华网】微金所荣膺2017互联网金融典范企业奖</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-08-23</small>
+                <br>
+                <p class="n-content">
+                  【中华网】微金所荣膺2017互联网金融典范企业奖 2017年7月20日，第六届中国财经峰会暨“光荣与梦想”致敬盛典在京举办。微金所受邀参与此次盛会，与行业领袖们共话互联网金融领域的发展机遇与挑战，并                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【网易新闻】微金所恭贺粤东西北首家民营银行-客商银行盛大开业！</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-07-24</small>
+                <br>
+                <p class="n-content">
+                  【网易新闻】微金所恭贺粤东西北首家民营银行-客商银行盛大开业！ 喜讯： 梅州客商银行股份有限公司经中国银行业监督管理委员会广东监管局批准，于2017年6月28日起正式对外营业。微金所股东宝新能 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+              <dl class="n-dl">
+                <dt class="n-title">
+                <a href="#">【环球网】微金所董事长范忠民荣获2017第八届中美企业峰会“杰出贡献奖”</a>
+              </dt>
+                <dd>
+                  <small class="n-date">2017-07-24</small>
+                  <br>
+                  <p class="n-content">
+                    【环球网】微金所董事长范忠民荣获2017第八届中美企业峰会“杰出贡献奖” 2017第八届中美企业峰会于4月30日在洛杉矶著名的千禧店水晶大厅举行。美国联邦众议员赵美心(Judy Chu)，前美国加州共                  </p>
+                  <a href="#" class="n-more">Read more →</a>
+                </dd>
+              </dl>
+            </dl>
+          </div>
+
+          <div class="">
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-11-06</small>
+                <br>
+                <p class="n-content">
+                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【新浪网】 互联网金融平台微金所实缴注册资本增至1亿元</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-09-19</small>
+                <br>
+                <p class="n-content">
+                  【新浪网】互联网金融平台微金所实缴注册资本增至1亿元2017年7月24日，互联网金融平台微金所在其官方微信公众号发布了“微金所注册资本增至1亿元 夯实资本 更上一层”的公告，正式宣布，微金所经工商部门 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-11-06</small>
+                <br>
+                <p class="n-content">
+                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微动态】《搜狐财经》《国际在线》等多家媒体报道：股权质押或成互联网金融资产端新走向</a>
+            </dt>
+              <dd>
+                <small class="n-date">2016-10-17</small>
+                <br>
+                <p class="n-content">
+                  2016年互联网金融真正进入监管元年，最严监管的强势落地让互联网金融行业加速进入洗牌期。“13条禁令”更缩小了平台的业务空间，使本不充裕的优质资产变的更加匮乏。在监管元年以及优质资产“资产荒”双重压力 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+          </div>
+
+          <div id="newsHistory" style="width:808px;display:block">
+            <div class="history_content">
+              <span class="history_bs"></span>
+              <div class="history_now">现在</div>
+              <div class="history_content_right">
+                <div>
+                  <span class="history_2014">2017</span>
+                  <i class="his-tl">▼</i>
+                  <img class="hidden-xs" src="images/history_rec.jpg" />
+                  <p class="hidden-xs">07月13日</p>
+                  <dl>
+                    <dt>2017年07月13日</dt>
+                    <dd>平台更新内容：<br /> 1、微金所用户平台密码安全限制
+                      <br /> 2、优惠券使用优化
+                      <br /> 3、修改服务协议，增加3.11条
+                      <br />
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <i class="his-tl">▼</i>
+                  <img src="images/history_rec.jpg" alt="">
+                  <p>06月30日</p>
+                  <dl>
+                    <dt>2017年06月30日</dt>
+                    <dd>平台更新内容：<br /> 1、连连支付优化
+                      <br /> 2、连连可提现金额优化
+                      <br /> 3、修改微投资借贷合同
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <i class="his-tl">▼</i>
+                  <img src="images/history_rec.jpg" alt="">
+                  <p>05月30日</p>
+                  <dl>
+                    <dt>2017年05月30日</dt>
+                    <dd>平台更新内容：<br /> 1、增加连连支付通道
+                      <br /> 2、稳赢保借款申请页面优化
+                      <br /> 3、验证码优化
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <i class="his-tl">▼</i>
+                  <img src="images/history_rec.jpg" alt="">
+                  <p>04月27日</p>
+                  <dl>
+                    <dt>2017年04月27日</dt>
+                    <dd>平台更新内容：<br /> 1、新手专区文案修改
+                      <br /> 2、微金宝展示优化
+                      <br /> 3、借款申请页面优化
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <i class="his-tl">▼</i>
+                  <img src="images/history_rec.jpg" alt="">
+                  <p>01月20日</p>
+                  <dl>
+                    <dt>2017年01月20日</dt>
+                    <dd>平台更新内容：<br /> 1、标的详情页增加发起转让时限提示
+                      <br /> 2、发布2016年运营报告
+                      <br />
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <span class="history_2014">2016</span>
+                  <i class="his-tl">▼</i>
+                  <img class="hidden-xs" src="images/history_rec.jpg" />
+                  <p class="hidden-xs">12月19日</p>
+                  <dl>
+                    <dt>2016年12月19日</dt>
+                    <dd>平台更新内容：<br /> 1、修正个人中心的"已充值总额"和"已提现总额"
+                      <br /> 2、优化回款计划中"未发起赎回的月月盈本息"计算规则
+                      <br /> 3、港澳台用户实名认证优化
+                      <br />
+                    </dd>
+                  </dl>
+                </div>
+                <div>
+                  <i class="his-tl">▼</i>
+                  <img src="images/history_rec.jpg" alt="">
+                  <p>5月18日</p>
+                  <dl>
+                    <dt>2016年5月18日</dt>
+                    <dd>平台更新内容：<br /> 1、新增月月盈产品，更多投资选择
+                      <br /> 2、金房宝、车帮主标的展示优化
+                      <br /> 3、微投资标的详情增加合同范本
+                      <br /> 4、VIP 年化计算展示优化
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="">
+            <div class="report-box">
+              <h4 class="h4">利率报告</h4>
+              <p class="report-content">
+                微金所为客观、精确地对区域市场的真实利率水平进行反馈，并为推进利率市场化民间借贷阳光化贡献一份力，
+                自2013年11月起实行按月发布《微金所中国民间利率市场化报告》，并与汤森路透合作，通过汤森路透官方网站面向全球发布。
+                《微金所中国民间利率市场化报告》根据微金所平台交易数据、上海征信系统数据等综合统计分析得出，是监管部门制定金融政策、
+                金融机构业务拓展提供有益的参考。后续每月报告均将在微金所平台定期发布，欢迎有需要的人士浏览、下载。
+              </p>
+              <div class="report-box">
+                <ul id="rateReport" class="report-list">
+                  <li><a href="#">微金所信贷市场利率指数报告 (2017年10月）</a></li>
+                  <li><a href="#">微金所信贷市场利率指数报告 (2017年9月）</a></li>
+                  <li><a href="#">微金所信贷市场利率指数报告 (2017年8月）</a></li>
+                  <li><a href="#">微金所信贷市场利率指数报告 (2017年7月）</a></li>
+                  <li><a href="#">微金所信贷市场利率指数报告 (2017年6月）</a></li>
+                  <li><a href="#">微金所信贷市场利率指数报告 (2017年5月）</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微公告】微金所发布年度机构信用评级</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-09-19</small>
+                <br>
+                <p class="n-content">
+                     根据国家有关互联网金融主管部门颁发的《关于促进互联网金融健康发展的指导意见》、《网络借贷信息中介机构业务活动管理暂行办法》等系列行业规范，进一步明确了互联网金融平台的“信息中介”地位，负有“信息披露、风险提示”的责任和义务，全面披露“借款人、担保人的信用风险、信用评级”。 夯实资本 更上一层”的公告，正式宣布，微金所经工商部门 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微公告】评级术语释义</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-08-23</small>
+                <br>
+                <p class="n-content">
+                  微金所持续推进交易所模式，产品星级是上架资产风险定价的核心要素。现将星级含义及其投资提示公开展示，希望广大投资者时刻把握投资风险。 </p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+            <dl class="n-dl">
+              <dt class="n-title">
+              <a href="#">【微公告】关于车帮主及金房宝产品提前还款的说明</a>
+            </dt>
+              <dd>
+                <small class="n-date">2017-07-24</small>
+                <br>
+                <p class="n-content">
+                  车帮主及金房宝产品是微金所平台针对借款人推出的优质短期借款项目，该借款一般用于临时资金周转，所以在借款人资金充裕时， 可能会出现借款人提前还款的情况。</p>
+                <a href="#" class="n-more">Read more →</a>
+              </dd>
+            </dl>
+          </div>
+
+
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <%- include('lz_foot') %>
+
+
+</body>
+
+</html>
