@@ -1,0 +1,239 @@
+@charset "utf-8"
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  list-style: none;
+  text-decoration: none;
+}
+
+.w{
+  width: 1200px;
+  margin: 0px auto;
+  position: relative;
+}
+
+.top{
+  height: 70px;
+  border-bottom:  1px solid rgb(200, 196, 195);
+}
+
+.top1 >img{
+  width: 58px;
+  height: 55px;
+  position: absolute;
+  top: 3px;
+  left: 0px;
+}
+.top2{
+  width: 120px;
+  height: 50px;
+  font-size: 2em;
+  position: absolute;
+  top: 3px;
+  left: 68px;
+  border-right: 1px solid rgb(200, 196, 195);
+}
+
+.top3{
+  width: 87px;
+  height: 72px;
+  position: absolute;
+  top: -13px;
+  left: 195px;
+}
+
+.top4 >button{
+  width: 113px;
+  height: 45px;
+  position: absolute;
+  top: 7px;
+  right: 172px;
+  background-color: rgb(250, 250, 255);
+  border: 1px solid rgb(108, 249, 22);
+  border-radius: 10px 10px 10px;
+}
+
+.top5 >a{
+  float: right;
+  position: absolute;
+  top: 10px;
+  right: 91px;
+  font-size: 1.5em;
+}
+
+.top6 >a{
+  float: right;
+  position: absolute;
+  top: 10px;
+  right: -3px;
+  font-size: 1.5em;
+}
+.top5>a:link,.top6 >a:link{
+  color: red;
+}
+.top5>a:hover,.top6 >a:hover{
+  color:rgb(17, 232, 186);
+}
+.top5>a:active,.top6>a:active{
+  position: absolute;
+  bottom: 0px;
+  border-bottom: 2px solid red;
+}
+.middle{
+  margin-top: 40px;
+  height: 600px;
+  /*border: 2px solid rgb(125, 241, 135);*/
+}
+
+.tu >img{
+  position: absolute;
+  top: 10px;
+}
+.kuang{
+  position: absolute;
+  top: 0px;
+  right: 26px;
+  height: 400px;
+  width: 400px;
+  border: 1px solid rgb(200, 196, 195);
+}
+
+.kuang >span{
+  position: absolute;
+  top: 5px;
+  right:140px;
+  font-size: 1.5em;
+
+}
+
+.tu1 >img{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 45px;
+  left: 253px;
+  z-index: 1;
+}
+
+.tu2 >img{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 45px;
+  left: 253px;
+  z-index: 1;
+}
+.put1{
+   width: 263px;
+   height: 30px;
+   position: absolute;
+   top: 116px;
+   right: 65px;
+   border: 1px solid rgb(200, 196, 195);
+   text-indent: 30px;
+}
+
+.put2{
+   width: 263px;
+   height: 30px;
+   position: absolute;
+   top: 176px;
+   right: 65px;
+   border: 1px solid rgb(200, 196, 195);
+   text-indent: 30px;
+}
+
+.icon-wxbzhanghu{
+  position: absolute;
+  top: 122px;
+  right:304px;
+  font-size: 20px;
+  z-index: 1;
+}
+.icon-iconfontwujingongju{
+  position: absolute;
+  top: 180px;
+  right: 303px;
+  font-size: 20px;
+  z-index: 1;
+}
+
+.put3{
+  position: absolute;
+  top: 243px;
+  right: 314px;
+}
+.put3_1{
+  position: absolute;
+  top: 242px;
+  right: 253px;
+  font-size: 0.5em;
+}
+.put3_2{
+  position: absolute;
+  top: 242px;
+  right: 70px;
+  font-size: 0.5em;
+}
+.put3_2:link{
+  color: rgb(19, 226, 195);
+}
+.put3_2:hover{
+  color: rgb(98, 178, 236);
+}
+.denglu{
+  width: 263px;
+  height: 40px;
+  background-color: red;
+  margin-top: 27px;
+  position: absolute;
+  top:250px;
+  right: 66px;
+}
+.denglu_1{
+  position: relative;
+  top: -19px;
+  left: 77px;
+  font-size: 22px;
+}
+.denglu_1 a:link{
+  color: white;
+}
+.denglu_1 a:visited{
+  color: white;
+
+}
+#last{
+  position: absolute;
+  top: 332px;
+  right: 264px;
+  font-size: 0.5em;
+}
+.last_1{
+  position: absolute;
+  top: 332px;
+  right: 214px;
+  font-size: 0.5em;
+}
+
+.foot{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.footer {
+    background: #f3f3f3;
+    padding: 50px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    border-top: 1px solid #f3f3f3;
+}

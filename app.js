@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var lz = require('./routes/lz');
-var q = require('./routes/q');
+var g = require('./routes/g');
 
 var app = express();
 
@@ -30,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/head', function(req, res) {
   // console.log(req);
-  res.render('lz_foot');
+  res.sendFile('html/G_deng.html');
+  // res.render('lz_foot');
 });
 
 app.get('/con', function(req, res) {
@@ -39,7 +40,7 @@ app.get('/con', function(req, res) {
 });
 app.use('/', index);
 app.use('/lz', lz);
-app.use('/q', q);
+app.use('/g', g);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
