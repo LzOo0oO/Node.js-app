@@ -9,6 +9,10 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var lz = require('./routes/lz');
 var q = require('./routes/q');
+var h = require('./routes/h');
+var z = require('./routes/z');
+var g = require('./routes/g');
+var l = require('./routes/l');
 
 var app = express();
 
@@ -40,6 +44,10 @@ app.get('/con', function(req, res) {
 app.use('/', index);
 app.use('/lz', lz);
 app.use('/q', q);
+app.use('/h', h);
+app.use('/z', z);
+app.use('/g', g);
+app.use('/l', l);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
