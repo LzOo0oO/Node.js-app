@@ -641,6 +641,15 @@ body {
 .xs-zy4-1 {
   position: relative;
 }
+.xs-zy4-1 p {
+  height: 10px;
+}
+.xs-que-1 {
+  font-size: 20px;
+  padding: 10px 0;
+  display: inline-block;
+  margin-bottom: 33px;
+}
 .xs-que {
   border-bottom: 1px #dd3137 solid;
   color: #dd3137;
@@ -650,4 +659,32 @@ body {
   padding: 0 30px;
   position: absolute;
   top: -25px;
+}
+.panel-body {
+  padding: 15px 0 15px 40px;
+  line-height: 30px;
+  color: #9A9A9A;
+  border: 1px solid #CDD0D5;
+  border-top: none;
+  background-color: #FCFCFC;
+
+}
+.panel-heading {
+  border-bottom: 1px solid #ccc !important;
+}
+.panel-title > a:hover {
+  text-decoration: none !important;
+}
+.panel-title > a {
+  text-decoration: none  !important;
+}
+.panel-default>.panel-heading {
+  background-color: #fff !important;
+}
+.xs-que-2 {
+  transform: translateY(5px);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background: url("/images/001.png");
 }
