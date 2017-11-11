@@ -141,6 +141,10 @@ body {
   right: 3px;
   top:20%;
   font-size: 18px;
+  z-index: 11;
+}
+.xs-ding:hover {
+  background-color: rgba(128, 255, 0, 0.77);
 }
 .xs-ding a {
   display: block;

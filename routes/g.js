@@ -14,7 +14,14 @@ g.get('/login', function(req, res, next) {
 });
 
 g.post('/login', function(req, res, next) {
-  res.sendFile("html/G_zhu.html", options);
+  // if (req.body.passwd == ???) {
+  //   res.json({login: true, html: '/'});
+  // } else {
+  //   res.json({login: false});
+  // };
+
+
+  res.json({login: false});
 });
 
 
