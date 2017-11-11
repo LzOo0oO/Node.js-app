@@ -14,7 +14,7 @@ g.get('/login', function(req, res, next) {
 });
 
 g.post('/login', function(req, res, next) {
-  res.sendFile("html/G_zhu.html", options);
+  res.render("index");
 });
 
 
