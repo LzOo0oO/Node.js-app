@@ -20,6 +20,14 @@ h.get('/04', function(req, res, next) {
   res.render('h_xs-04');
 });
 
+h.get('/05', function(req, res, next) {
+  res.render('h_xs-05');
+});
+
+h.get('/06', function(req, res, next) {
+  res.render('h_xs-06');
+});
+
 
 
 
