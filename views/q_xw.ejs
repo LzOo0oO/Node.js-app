@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css'>
   <title></title>
   <style media="screen">
     * {
@@ -46,6 +46,15 @@
       border-right: none;
     }
 
+    .show > div {
+      display: none;
+    }
+
+    .show > div.active {
+      display: block;
+    }
+
+    .news-box .news-left ul li.active,
     .news-box .news-left ul li:hover {
       background: #fff;
       border-left: 3px #dd2c37 solid;
@@ -222,7 +231,7 @@
     height: 2px;
     line-height: 43px;
     padding: 12px 50px 45px;
-    background: url("images/rate.jpg") no-repeat 6px 13px;
+    background: url("/images/rate.jpg") no-repeat 6px 13px;
     border-bottom: 1px solid #c6cbcf;
     }
 
@@ -240,26 +249,26 @@
   <div class="new-bg">
     <div class="news-box">
       <div class="news-left">
-        <ul>
+        <ul class="tabs">
           <li class="active" index="0">
             <a href="#">全部新闻</a>
           </li>
-          <li class="active" index="1">
+          <li index="2">
             <a href="#">媒体报道</a>
           </li>
-          <li class="active" index="2">
+          <li index="1">
             <a href="#">微金所头条</a>
           </li>
-          <li class="active" index="3">
+          <li index="3">
             <a href="#">行业资讯</a>
           </li>
-          <li class="active" index="4">
+          <li index="4">
             <a href="#">更新历史</a>
           </li>
-          <li class="active" index="5">
+          <li index="5">
             <a href="#">利率报告</a>
           </li>
-          <li class="active" index="6">
+          <li index="6">
             <a href="#">专题列表</a>
           </li>
         </ul>
@@ -267,10 +276,10 @@
 
 
       <div class="news-right">
-        <div class="news-all">
+        <div class="news-all show">
 
-          <div class="">
-            <dl class="n-dl">
+          <div class="active">
+            <dl class="n-dl ">
               <dt class="n-title">
               <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
             </dt>
@@ -322,7 +331,7 @@
             </dl>
           </div>
 
-          <div class="">
+          <div >
             <dl class="n-dl">
               <dt class="n-title">
               <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
@@ -483,7 +492,8 @@
             </dl>
           </div>
 
-          <div id="newsHistory" style="width:808px;display:block">
+
+          <div class="" style="width:808px;">
             <div class="history_content">
               <span class="history_bs"></span>
               <div class="history_now">现在</div>
@@ -491,7 +501,7 @@
                 <div>
                   <span class="history_2014">2017</span>
                   <i class="his-tl">▼</i>
-                  <img class="hidden-xs" src="images/history_rec.jpg" />
+                  <img class="hidden-xs" src="/images/history_rec.jpg" />
                   <p class="hidden-xs">07月13日</p>
                   <dl>
                     <dt>2017年07月13日</dt>
@@ -504,7 +514,7 @@
                 </div>
                 <div>
                   <i class="his-tl">▼</i>
-                  <img src="images/history_rec.jpg" alt="">
+                  <img src="/images/history_rec.jpg" alt="">
                   <p>06月30日</p>
                   <dl>
                     <dt>2017年06月30日</dt>
@@ -516,7 +526,7 @@
                 </div>
                 <div>
                   <i class="his-tl">▼</i>
-                  <img src="images/history_rec.jpg" alt="">
+                  <img src="/images/history_rec.jpg" alt="">
                   <p>05月30日</p>
                   <dl>
                     <dt>2017年05月30日</dt>
@@ -528,7 +538,7 @@
                 </div>
                 <div>
                   <i class="his-tl">▼</i>
-                  <img src="images/history_rec.jpg" alt="">
+                  <img src="/images/history_rec.jpg" alt="">
                   <p>04月27日</p>
                   <dl>
                     <dt>2017年04月27日</dt>
@@ -540,7 +550,7 @@
                 </div>
                 <div>
                   <i class="his-tl">▼</i>
-                  <img src="images/history_rec.jpg" alt="">
+                  <img src="/images/history_rec.jpg" alt="">
                   <p>01月20日</p>
                   <dl>
                     <dt>2017年01月20日</dt>
@@ -553,7 +563,7 @@
                 <div>
                   <span class="history_2014">2016</span>
                   <i class="his-tl">▼</i>
-                  <img class="hidden-xs" src="images/history_rec.jpg" />
+                  <img class="hidden-xs" src="/images/history_rec.jpg" />
                   <p class="hidden-xs">12月19日</p>
                   <dl>
                     <dt>2016年12月19日</dt>
@@ -566,7 +576,7 @@
                 </div>
                 <div>
                   <i class="his-tl">▼</i>
-                  <img src="images/history_rec.jpg" alt="">
+                  <img src="/images/history_rec.jpg" alt="">
                   <p>5月18日</p>
                   <dl>
                     <dt>2016年5月18日</dt>
@@ -652,10 +662,34 @@
   </div>
 
 
+  <script src="/js/jquery.min.js" charset="utf-8"></script>
+  <script  type="text/javascript">
+    // var tabs = document.getElementsByClassName('tabs ')[0].children;
+    // var contents = document.getElementsByClassName("show")[0].children;
+    //
+    //
+    // for (var  i = 0; i < tabs.length; i++) {
+    //
+    //   tabs[i].index = i;
+    //   tabs[i].onclick = function(event) {
+    //     for (var j = 0; j < tabs.length; j++) {
+    //       tabs[j].className = "";
+    //       contents[j].className = "";
+    //     }
+    //     this.className = "active";
+    //     contents[this.index].className = "active";
+    //   };
+    // }
+
+    $(".tabs").children().click(function() {
+      $(this).attr("class", "active").siblings().removeAttr("class");
+      var num = $(this).attr("index");
+      $(".show > div").eq(num).attr("class", "active").siblings().removeAttr("class");
+    });
 
 
 
-
+  </script>
   <%- include('lz_foot') %>
 
 

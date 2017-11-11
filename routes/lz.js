@@ -5,10 +5,9 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 db.on('error', (err) => {console.log(`mongoose ^^ ${err}`)});
 db.on('open', () => {console.log("mongoose 数据库开启...")});
-mongoose.connect("mongodb://192.168.0.135", {useMongoClient: true});
+mongoose.connect("mongodb://192.168.0.135/stus", {useMongoClient: true});
 var Schema = mongoose.Schema;
-var stuSchema = new Schema({
-  // list: [1, 2, 3],
+var touZiSchema = new Schema({
   title: String,
   incomeNum: Number,
   income: String,
@@ -20,6 +19,23 @@ var stuSchema = new Schema({
   mayMoney: String,
   src: String
 });
+
+var WoYaoTouZi = mongoose.model("Three", touZiSchema);
+// 添加数据。。。。
+
+// new WoYaoTouZi({
+//   title: "这不是真的啊",
+//   incomeNum: 99,
+//   income: "% + 99%",
+//   year: 365,
+//   yearType: "0.0001%",
+//   money: "12万元",
+//   star: 30,
+//   program: 886,
+//   mayMoney: "666万元",
+//   src: '/lz'
+// }).save((err, data) => {console.log(err, data)});
+
 
 var obj = {
   list: [1, 2, 3],
