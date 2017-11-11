@@ -532,3 +532,104 @@ body {
   font-size: 14px;
   line-height: 28px;
 }
+.xs-table-1 {
+  clear: both;
+  padding-bottom: 50px;
+  margin-bottom: 45px;
+}
+.xs-h4 {
+  color: #333;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0 25px 0;
+}
+.xs-vip-3 table {
+  border-top: 1px solid #d8e5ed;
+  border-left: 1px solid #d8e5ed;
+}
+.xs-vip-4 {
+  width: 150px;
+  float: left;
+}
+.xs-table-1 table {
+  border: 1px solid #d8e5ed;
+  margin: 80px 0;
+}
+.xs-vip-3 table tr td {
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #333;
+  border-bottom: 1px solid #d8e5ed;
+  border-right: 1px solid #d8e5ed;
+}
+.xs-vip-3 table tbody {
+  background: #f0f9ff;
+}
+.xs-vip-5 {
+  width: 93px;
+  float: left;
+  border-left: none;
+}
+.xs-clearfix::after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+
+.xs-clearfix {
+  *zoom: 1;
+}
+.xs-p-1 {
+  text-align: left;
+  line-height: 28px;
+  color: #666;
+  padding: 20px 0;
+}
+.xs-h5 {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  font-weight: normal;
+}
+.xs-h5-1 {
+  font-size: 20px;
+  display: inline-block;
+  width: 140px;
+  color: #333;
+  background: #fff;
+  position: relative;
+  top: 12px;
+}
+.xs-vip-5 {
+  position: relative;
+}
+.xs-vip-6 {
+  float: left;
+  padding-right: 20px;
+  width: 140px;
+
+}
+.xs-vip-7 {
+  position: absolute;
+  top: -10px;
+  left: 213px;
+  text-align: left;
+  padding: 30px 0 20px 0;
+  font-size: 20px;
+  color: #333;
+  width: 233px;
+}
+.xs-vip-8 {
+  position: absolute;
+  top: 56px;
+  left: 214px;
+  width: 600px;
+}
+.xs-vip-9 {
+  border-top: 1px solid #ccc;
+  height: 170px;
+  padding-top: 56px;
+}
