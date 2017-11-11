@@ -16,6 +16,11 @@ h.get('/03', function(req, res, next) {
   res.render('h_xs-03');
 });
 
+h.get('/04', function(req, res, next) {
+  res.render('h_xs-04');
+});
+
+
 
 
 
