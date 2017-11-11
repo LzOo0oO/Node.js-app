@@ -118,6 +118,7 @@ body {
 .xs-menu ul li {
   display: inline-block;
 }
+.xs-menu ul li a.active,
 .xs-menu ul li a:hover {
     color: #2a6496;
   border-bottom: 3px solid #dd3137;

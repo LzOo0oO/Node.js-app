@@ -286,6 +286,7 @@ a:visited{
   float: left;
   background: url(../images/short.png);
   position: relative;
+  top: -5px;
 }
 .short .short-left .onPid .one,.medium .medium-left .onPid .one,.long .long-left .onPid .one,.resa .resa-left .onPid .one{
   margin-top: 130px;
@@ -309,7 +310,7 @@ a:visited{
     transition: all 0.5s line;
   }
  .inverstItem:hover{
-    transform: translateY(-3px);
+    transform: translateY(-5px);
   }
 
 
