@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel='stylesheet' href='/gy-stylesheets/style.css' />
+  <title>微金所-成就亿万人的信用价值</title>
+</head>
+
+<body>
+  <%-include("lz_h_head")%>
+    <!-- 关于我们 -->
+    <img class="gy-png" src="/images/about-header.jpg" alt="">
+    <div class="gy-boxbg">
+      <div class="gy-container">
+        <div class="gy-menubox">
+          <!-- 菜单栏 -->
+          <div class="gy-leftbox">
+            <ul>
+              <li><a href="/about/gsjj">公司简介</a></li>
+              <li><a href="/about/gltd">管理团队</a></li>
+              <li><a href="/about/dstd">董事团队</a></li>
+              <li><a href="/about/fzlc">发展历程</a></li>
+              <li><a href="/about/hzhb">合作伙伴</a></li>
+              <li><a href="/about/yqlj">友情链接</a></li>
+              <li><a href="/about/lxwm">联系我们</a></li>
+            </ul>
+          </div>
+          <!--右侧盒子-->
+          <div class="gy-rightbox">
+
+            <!-- 合作伙伴 -->
+            <div class="gy-hzhb">
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <%-include("lz_foot")%>
+      <script src="/js/jquery.min.js" charset="utf-8"></script>
+      <script type="text/javascript">
+        var tabs = document.getElementsByClassName('gy-tabs')[0].children;
+        var contents = document.getElementsByClassName("gy-show")[0].children;
+
+        for (var i = 0; i < tabs.length; i++) {
+
+          tabs[i].index = i;
+          tabs[i].onclick = function(event) {
+            for (var j = 0; j < tabs.length; j++) {
+              tabs[j].className = "";
+              contents[j].className = "";
+            }
+            this.className = "gy-active";
+            contents[this.index].className = "gy-active";
+          };
+        }
+      </script>
+
+</body>
+
+</html>

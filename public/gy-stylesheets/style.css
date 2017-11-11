@@ -207,9 +207,9 @@ nav .gy-container .gy-rightmenu ul li.gy-tou a:active {
 .gy-menubox {
   background: #f3f3f3;
   border: 1px #e3e3e3 solid;
-  height:1777px;
   width: 1200px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .gy-rightbox {
@@ -220,7 +220,7 @@ nav .gy-container .gy-rightmenu ul li.gy-tou a:active {
   float: right;
   width: 958px;
   background: #fff;
-  height:1777px;
+  overflow: hidden;
 }
 
 .gy-boxbg {
@@ -261,12 +261,12 @@ img {
   border-top: none;
 }
 
-.gy-bbox {
+.gy-bbox, .gy-pbox {
   margin-left: 30px;
 }
 
 .gy-bbox table {
-  width: 950px;
+  width: 1200px;
 }
 
 .gy-bbox table tbody tr.gy-tr1 td {
@@ -290,23 +290,25 @@ img {
 .gy-bbox table {
   margin-top: 50px;
 }
+
 .gy-bbox table {
   margin-bottom: 100px;
-    width: 100%;
+  width: 100%;
 }
+
 .gy-bbox table tbody tr td:nth-child(1) {
   width: 260px;
 }
 
 .gy-bbox table tbody tr td:nth-child(2) {
   width: 200px;
-  ;
   padding: 0 60px;
 }
 
 .gy-bbox table tbody tr td:nth-child(3) {
   width: 260px;
 }
+
 .gy-bbox table tbody tr.gy-tr2 td {
   float: left;
   height: 197px;
@@ -315,6 +317,7 @@ img {
   color: #6d6e70;
   font-size: 14px;
 }
+
 .gy-bbox table tbody tr.gy-tr2 td p {
   text-align: left;
   font-size: 14px;
@@ -323,45 +326,52 @@ img {
   padding-top: 15px;
   margin-bottom: 6px;
 }
+
 .gy-orange {
-  color:orange;
+  color: orange;
 }
+
 .gy-blue {
   color: #428bca !important;
 }
+
 .gy-msg {
   color: #686868;
 }
+
 .gy-m2 {
   padding: 15px 0;
 }
+
 .gy-msg .gy-m2 dt {
   font-size: 20px;
-padding-left: 10px
+  padding-left: 10px
 }
 
 .gy-msg dl dt {
-padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .gy-msg .gy-m2 dt i {
   display: inline-block;
-width: 5px;
-height: 5px;
-background: #dd2c37;
-position: relative;
-top: 12px;
-right: 7px;
+  width: 5px;
+  height: 5px;
+  background: #dd2c37;
+  position: relative;
+  top: 12px;
+  right: 7px;
 }
+
 .gy-mm1 {
   font-size: 16px;
-    padding-top: 15px;
+  padding-top: 15px;
 }
+
 dt {
   font-weight: 700;
 }
 
-dt,dd {
+dt, dd {
   line-height: 20px;
 }
 
@@ -369,11 +379,235 @@ dt,dd {
   position: relative;
   top: 7px;
 }
+
 .gy-mm4 {
-      padding: 40px 0;
-      font-size: 20px;
+  padding: 40px 0;
+  font-size: 20px;
 }
 
-.gy-mm5{
+.gy-mm5 {
   text-align: center;
+}
+
+.gy-time {
+  background: url("/images/time-bg1.png") no-repeat;
+  vertical-align: top;
+  background-size: contain;
+  color: #e3e3e3;
+  padding-top: 20px;
+  background-position-x: 65px;
+  width: 84px !important;
+}
+
+.gy-pbox table tbody tr td p.gy-text-h4 {
+  color: #dd2c37;
+  font-size: 20px;
+  line-height: 38px;
+  padding-top: 20px;
+  text-align: left;
+  padding-left: 233px;
+}
+
+.gy-pbox table tbody tr td p.gy-text-h4 strong.gy-text-h5 {
+  color: #666;
+  font-size: 16px;
+  padding-top: 15px;
+  font-weight: 100;
+}
+
+.gy-text-js {
+  background: #fcfcfc;
+  padding: 20px 0 25px 30px;
+  width: 787px;
+}
+
+.gy-pbox table tbody tr td.gy-text-js span img {
+  padding: 0 70px;
+  float: left;
+}
+
+.gy-ulbox li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+.gy-ulbox li a img {
+  width: 230px;
+  float: left;
+}
+
+.gy-show>div {
+  display: none;
+}
+
+.gy-show>div.gy-active {
+  display: block;
+}
+
+.gy-gltd {
+  background: #fff;
+  display: table;
+  padding: 25px;
+  font-size: 14px;
+}
+
+.gy-gltd ul.gy-glcon {
+  height: 250px;
+}
+
+.gy-gltd ul.gy-glcon img {
+  border: 1px #e3e3e3 solid;
+  padding: 5px;
+  float: left;
+  margin-right: 20px;
+  max-width: 150px;
+  width: 100%;
+}
+
+.gy-gltd ul.gy-glcon ul {
+  margin-bottom: 90px;
+  display: inline-block;
+  float: left;
+  padding-top: 5px;
+  width: 728px;
+}
+
+.gy-gltext-h4 {
+  font-size: 22px;
+  color: #333;
+  border-bottom: 1px #e3e3e3 solid;
+  padding-bottom: 15px;
+}
+
+.gy-gltext-h4 strong {
+  font-size: 16px;
+  color: #666;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.gy-gltext-h5 {
+  color: #666;
+  padding-top: 15px;
+  line-height: 28px;
+}
+
+.gy-dstd {
+  background: #fff;
+  display: table;
+  padding: 25px;
+  font-size: 14px;
+  width: 909px;
+}
+
+.gy-dstd ul.gy-glcon {
+  padding-bottom: 40px;
+}
+
+.gy-fzlc {
+  text-align: center;
+  background: #fff;
+  display: table;
+  padding: 25px 27px;
+  font-size: 14px;
+}
+
+.gy-yqlj {
+  background: #fff;
+  display: table;
+  padding: 25px;
+  font-size: 14px;
+  width: 909px;
+  padding-bottom: 15%;
+}
+
+.gy-s1 {
+  background: url("/images/firendship1.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s2 {
+  background: url("/images/firendship2.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s3 {
+  background: url("/images/firendship3.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s4 {
+  background: url("/images/firendship4.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s5 {
+  background: url("/images/firendship5.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s6 {
+  background: url("/images/firendship6.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s7 {
+  background: url("/images/firendship7.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s8 {
+  background: url("/images/firendship8.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s9 {
+  background: url("/images/firendship9.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+.gy-s10 {
+  background: url("/images/firendship10.jpg") no-repeat center center;
+  display: inline-block;
+    width: 150px;
+    height: 50px;
+    border: 1px #e3e3e3 solid;
+    margin: 0 10px 25px;
+}
+
+.gy-link {
+      margin-top: 15px;
+}
+.gy-link-p {
+  float: left;
+    margin: 0 43px;
+    line-height: 30px;
+    color: #666;
 }
