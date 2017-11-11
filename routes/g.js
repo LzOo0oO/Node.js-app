@@ -11,21 +11,22 @@ db.on('error', (err) => {console.log(`mongoose ^^ ${err}`)});
 db.on('open', () => {console.log("mongoose 数据库开启...")});
 mongoose.connect("mongodb://192.168.0.135/stus", {useMongoClient: true});
 var Schema = mongoose.Schema;
-// var touZiSchema = new Schema({
-//   title: String,
-//   incomeNum: Number,
-//   income: String,
-//   year: Number,
-//   yearType: String,
-//   money: String,
-//   star: Number,
-//   program: Number,
-//   mayMoney: String,
-//   src: String
+var UsersData = new Schema({
+  user: String,
+  passwd: String,
+});
+
+var AddCommonUser = mongoose.model("UsersH5", UsersData);
+// new AddCommonUser({user: "waa", passwd: "123"}).save(function(err, data) {
+//   if (!err) {
+//     console.log(`Mongoose 数据库: ${data.user} ---数据添加成功。。。`);
+//     console.log(data);
+//   } else {
+//     console.log(err);
+//   };
 // });
 
-// var WoYaoTouZi = mongoose.model("Three", touZiSchema);
-// new addData({});
+
 var options = {root: __dirname + "/../public"};
 
 
