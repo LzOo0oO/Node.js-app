@@ -1,7 +1,27 @@
 var express = require('express');
 var q = express.Router();
+var mongoose = require('mongoose');
 
-
+var db = mongoose.connection;
+db.on('error', (err) => {console.log(`mongoose ^^ ${err}`)});
+db.on('open', () => {console.log("mongoose 数据库开启...")});
+mongoose.connect("mongodb://192.168.0.135/stus", {useMongoClient: true});
+var Schema = mongoose.Schema;
+// var xinWenSchema = new Schema({
+//   title: String,
+//   incomeNum: Number,
+//   income: String,
+//   year: Number,
+//   yearType: String,
+//   money: String,
+//   star: Number,
+//   program: Number,
+//   mayMoney: String,
+//   src: String
+// });
+//
+// var XinWen = mongoose.model("XinWen", xinWenSchema);
+// new XinWen({});
 
 /* GET home page. */
 q.get('/', function(req, res, next) {
