@@ -148,7 +148,7 @@ body {
   z-index: 11;
 }
 .xs-ding:hover {
-  background-color: rgba(128, 255, 0, 0.77);
+  background-color: red;
 }
 .xs-ding a {
   display: block;

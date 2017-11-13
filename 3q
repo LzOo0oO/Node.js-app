@@ -1,0 +1,26 @@
+Merge remote-tracking branch 'origin/hly解决冲突。。。'
+
+# Conflicts:
+#	routes/h.js
+#
+# 似乎您正在做一个合并提交。如果不对，请删除文件
+#	.git/MERGE_HEAD
+# 然后重试。
+
+
+# 请为您的变更输入提交说明。以 '#' 开始的行将被忽略，而一个空的提交
+# 说明将会终止提交。
+# 位于分支 master
+# 您的分支与上游分支 'origin/master' 一致。
+#
+# 所有冲突已解决但您仍处于合并中。
+#
+# 要提交的变更：
+#	修改：     public/stylesheets/h_style.css
+#	修改：     views/h_xs-01.ejs
+#	修改：     views/h_xs-02.ejs
+#	修改：     views/h_xs-03.ejs
+#	修改：     views/h_xs-04.ejs
+#	修改：     views/h_xs-05.ejs
+#	修改：     views/h_xs-06.ejs
+#
