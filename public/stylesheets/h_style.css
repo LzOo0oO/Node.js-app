@@ -692,3 +692,8 @@ body {
   width: 20px;
   background: url("/images/001.png");
 }
+.xs-a {
+  background: #fff;
+  color:#428bca;
+  border-left: 3px red solid;
+}

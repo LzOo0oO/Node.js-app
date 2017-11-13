@@ -14,7 +14,7 @@
       <div class="xs-zy-1">
         <div class="xs-zy-2">
           <ul>
-            <li><a href="/h/01">操作指南</a></li>
+            <li class="xs-a"><a href="/h/01">操作指南</a></li>
             <li><a href="/h/02">新手指引</a></li>
             <li><a href="/h/03">VIP投资人</a></li>
             <li><a href="/h/04">常见问题</a></li>
@@ -67,6 +67,14 @@
 
     </div>
     <%- include("lz_foot") %>
+    <script src="/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var ul = $("ul li");
+    ul.click(function(){
+      location.href = $(this).find('a')[0].href;
+    });
+
+    </script>
 
   </body>
 </html>
