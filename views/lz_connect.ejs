@@ -41,7 +41,6 @@
             <dt>产品类型:</dt>
             <dd class="active">全部</dd>
             <dd>微投资<span class="hot" style="display: inline;"></span></dd>
-
             <dd>月月盈</a></dd>
             <dd>海航通宝</dd>
             <dd>微金宝</dd>
@@ -140,7 +139,7 @@
 
 
 <script type="text/javascript">
-  $(".lz-con-head-b > dl").children().click(function() {
+  $(".lz-con-head-b > dl").children("dd").click(function() {
     $(this).attr("class", "active").siblings().removeAttr("class");
   });
 </script>
