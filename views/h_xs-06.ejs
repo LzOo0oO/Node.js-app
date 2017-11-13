@@ -17,7 +17,7 @@
         <li><a href="/h/03">VIP投资人</a></li>
         <li><a href="/h/04">常见问题</a></li>
         <li><a href="/h/05">名词解释</a></li>
-        <li><a href="/h/06">产品介绍</a></li>
+        <li class="xs-a"><a href="/h/06">产品介绍</a></li>
       </ul>
     </div>
     <div class="xs-zy-3">
@@ -217,6 +217,7 @@
   </div>
 
 </div>
+<%- include("lz_foot") %>
 <script src="/js/jquery.min.js" charset="utf-8"></script>
 <script src="/js/bootstrap.min.js" charset="utf-8"></script>
 <script type="text/javascript">
@@ -231,5 +232,9 @@
     //   $(this).prev().css("background", "url('/images/001.png')");
     //   $(this).prev().data("index", "1");
     // };
+  });
+  var ul = $("ul li");
+  ul.click(function(){
+    location.href = $(this).find('a')[0].href;
   });
 </script>

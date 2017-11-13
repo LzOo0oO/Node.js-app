@@ -9,8 +9,7 @@ h.get('/01', function(req, res, next) {
 });
 
 h.get('/02', function(req, res, next) {
-  res.render('h_xs-01', {one: "", two: "", three: "", four: "active", five: "", six: "", seven: ""});
-  res.render('h_xs-02');
+  res.render('h_xs-02', {one: "", two: "", three: "", four: "active", five: "", six: "", seven: ""});
 });
 
 h.get('/03', function(req, res, next) {
