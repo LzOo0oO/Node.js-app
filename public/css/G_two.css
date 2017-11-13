@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+  margin: 0;
+}
 
 li{
   list-style: none;
@@ -91,14 +94,14 @@ a{
 .middle{
   margin-top: 40px;
   height: 738px;
-  background-color: rgba(30, 146, 212, 0.29);
-  border: 2px solid rgb(125, 241, 135);
+  background-color: #effaff;
+  /*border: 2px solid rgb(125, 241, 135);*/
   position: relative;
 }
 
 .zhuce{
   width: 450px;
-  height: 500px;
+  height: 538px;
   border: 1px solid rgb(200, 196, 195);
   background-color: white;
   position: absolute;
@@ -158,6 +161,64 @@ a{
   background-image: url("../images/timg.jpg");
   background-position: 116px 64px;
 }
+
+.put5{
+  width: 315px;
+  height: 30px;
+  position: absolute;
+  top: 360px;
+  right: 66px;
+  border: 1px solid rgb(200, 196, 195);
+  text-indent: 30px;
+}
+.put5_1{
+  width: 113px;
+  height: 33px;
+  position: absolute;
+  top: 361px;
+  right: 67px;
+  background-color: red;
+}
+
+.put5_2{
+  position: absolute;
+  top: 4px;
+}
+
+.put6{
+  position: absolute;
+  top: 409px;
+  right: 270px;
+}
+.put6_1{
+  position: absolute;
+  top: 409px;
+  right: 78px;
+  font-size: 0.2em;
+}
+
+.zhuce1{
+  width: 314px;
+  height: 40px;
+  background-color: red;
+  margin-top: 27px;
+  position: absolute;
+  top:414px;
+  right: 71px;
+}
+.zhuce1_1{
+  position: relative;
+  top: -19px;
+  left: 129px;
+  font-size: 22px;
+}
+.zhuce1_1 a:link{
+  color: white;
+}
+.zhuce1_1 a:visited{
+  color: white;
+
+}
 .icon-wxbzhanghu{
   position: absolute;
   top: 122px;
@@ -186,4 +247,53 @@ a{
   right: 356px;
   font-size: 20px;
   z-index: 1;
+}
+.icon-iconfontshouji{
+  position: absolute;
+  top: 366px;
+  right: 356px;
+  font-size: 20px;
+  z-index: 1;
+}
+
+#last{
+  position: absolute;
+  top: 498px;
+  right: 332px;
+  font-size: 0.5em;
+}
+.last_1{
+  position: absolute;
+  top: 498px;
+  right: 283px;
+  font-size: 0.5em;
+}
+
+.tu >a > img{
+  position: relative;
+  top: 82px;
+  right: -475px;
+}
+
+.register .footer {
+    background: #effaff;
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: -200px;
+  left: 400px;
+  /*background: #f3f3f3;*/
+  padding: 50px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  /*border-top: 1px solid #f3f3f3;*/
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
