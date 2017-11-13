@@ -30,21 +30,21 @@ a:visited {
   padding: 48px 0;
 }
 
-.container.con-bottom .first {
+.container.con-bottom .z-first {
   float: left;
   width: 752px;
   height: 100%;
   border-right: 1px solid #efefef;
 }
 
-.container.con-bottom .first .unit {
+.container.con-bottom .z-first .unit {
   display: inline-block;
   text-align: left;
   width: 24%;
   margin: 7px 0;
 }
 
-.container.con-bottom .first .unit span {
+.container.con-bottom .z-first .unit span {
   display: block;
   font-size: 60px;
   color: #666;
@@ -53,25 +53,25 @@ a:visited {
   height: 80px;
 }
 
-.container.con-bottom .first .unit span i {
+.container.con-bottom .z-first .unit span i {
   font-size: 60px;
   position: absolute;
   transition: all 0.5s ease-out;
 }
 
-.container.con-bottom .first span i.i-1:hover {
+.container.con-bottom .z-first span i.i-1:hover {
   transform: rotateX(360deg);
 }
 
-.container.con-bottom .first span i.i-2:hover {
+.container.con-bottom .z-first span i.i-2:hover {
   transform: rotateY(360deg);
 }
 
-.container.con-bottom .first span i.i-3:hover {
+.container.con-bottom .z-first span i.i-3:hover {
   transform: rotateZ(360deg);
 }
 
-.container.con-bottom .first span i.i-4:hover {
+.container.con-bottom .z-first span i.i-4:hover {
   transform: rotateX(360deg);
 }
 
