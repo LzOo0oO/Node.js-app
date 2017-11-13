@@ -17,13 +17,13 @@
           <!-- 菜单栏 -->
           <div class="gy-leftbox">
             <ul>
-              <li><a href="/l">公司简介</a></li>
-              <li><a href="/l/gltd">管理团队</a></li>
-              <li><a href="/l/dstd">董事团队</a></li>
-              <li><a href="/l/fzlc">发展历程</a></li>
-              <li><a href="/l/hzhb">合作伙伴</a></li>
-              <li><a href="/l/yqlj">友情链接</a></li>
-              <li><a href="/l/lxwm">联系我们</a></li>
+              <li><a href="/l/gltd">公司简介</li>
+                <li ><a href="/l/gltd">管理团队</a></li>
+                <li style="border-left: 3px #dd2c37 solid;background:#fff"><a href="/l/dstd">董事团队</a></li>
+                <li><a href="/l/fzlc">发展历程</a></li>
+                <li><a href="/l/hzhb">合作伙伴</a></li>
+                <li><a href="/l/yqlj">友情链接</a></li>
+                <li><a href="/l/lxwm">联系我们</a></li>
             </ul>
           </div>
           <!--右侧盒子-->
@@ -184,8 +184,14 @@
 
 
 
-
     <%-include("lz_foot")%>
+    <script src="/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var ul = $('ul li');
+      ul.click(function() {
+        location.href = $(this).find('a')[0].href;
+      });
+    </script>
 
 
 </body>

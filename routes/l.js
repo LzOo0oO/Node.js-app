@@ -10,6 +10,9 @@ var head_li = {one: "", two: "", three: "", four: "", five: "", six: "active"};
 l.get('/',function(req,res){
   res.render('l-gy', head_li);
 });
+l.get('/gsjj',function(req,res){
+  res.render('l-gy', head_li);
+});
 l.get('/gltd',function(req,res){
   res.render('l-gy-gltd', head_li);
 });

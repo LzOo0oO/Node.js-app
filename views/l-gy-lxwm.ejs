@@ -17,20 +17,48 @@
           <!-- 菜单栏 -->
           <div class="gy-leftbox">
             <ul>
-              <li><a href="/l">公司简介</a></li>
+              <li><a href="/l/gsjj">公司简介</a></li>
               <li><a href="/l/gltd">管理团队</a></li>
               <li><a href="/l/dstd">董事团队</a></li>
               <li><a href="/l/fzlc">发展历程</a></li>
               <li><a href="/l/hzhb">合作伙伴</a></li>
               <li><a href="/l/yqlj">友情链接</a></li>
-              <li><a href="/l/lxwm">联系我们</a></li>
+              <li style="border-left: 3px #dd2c37 solid;background:#fff"><a href="/l/lxwm">联系我们</a></li>
             </ul>
           </div>
           <!--右侧盒子-->
           <div class="gy-rightbox">
             <!-- 联系我们 -->
             <div class="gy-lxwm">
+              <ul class="gy-lxwm-ul">
+                <li class="gy-lxwmtext">联系客服</li>
+                <li class="gy-lxwm-h5">如果您在使用微金所（<span class="gy-orange">www.weijinsuo.com</span>）的过程中有任何疑问,请您与微金所客服人员联系，您还可以发送邮件向我们提出宝贵意见和建议,我们会在两个工作日内联系您！</li>
+                <li class="gy-lxwm-h5">客服电话：<span class="gy-orange">4006-89-4006 / 010-53563799（9:00~21:00）</span></li>
+                <li class="gy-lxwm-h5">传真号码：010-51727487</li>
+                <li class="gy-lxwm-h5">客服电邮：<a href="" class="gy-blue">service@weijinsuo.com</a></li>
+              </ul>
+              <ul class="gy-lxwm-ul">
+                <li class="gy-lxwmtext">商务合作</li>
+                <li class="gy-lxwm-h5">商务合作/市场推广/广告投放/媒体采访</li>
+                <li class="gy-lxwm-h5">电话：<span class="gy-blue">010-53563700 转 3663</span></li>
+                <li class="gy-lxwm-h5">邮箱：<a href="" class="gy-blue">bd@weijinsuo.com</a></li>
+              </ul>
+              <ul class="gy-lxwm-ul">
+                <li class="gy-lxwmtext">财富渠道合作（非广告投放）</li>
+                <li class="gy-lxwm-h5">电话（及微信）： <span class="gy-blue">15010578912</span> 财富01</li>
+                <li class="gy-lxwm-h5"> <span class="gy-blue gy-ll2">18211150273</span> 财富02</li>
+                <li class="gy-lxwm-h5"> <span class="gy-blue gy-ll2">18210205280</span> 财富03</li>
+                <li class="gy-lxwm-h5"> <span class="gy-blue gy-ll2">18210909382</span> 财富04</li>
+              </ul>
+              <ul class="gy-lxwm-ul">
+                <li class="gy-lxwmtext">公司地址</li>
+                <li class="gy-lxwm-h5">北京总部：中微（北京）信用管理有限公司</li>
+                <li class="gy-lxwm-h5">地址：北京市海淀区中关村南大街2号，数码大厦A座，23层（邮编：100086）</li>
+                <li class="gy-lxwm-h5">电话：<span class="gy-blue">010-53563700</span></li>
+                <li class="gy-lxwm-h5">深圳分公司：深圳微金所金融信息服务有限公司</li>
+                <li class="gy-lxwm-h5">地址：中国深圳福田区深南大道2012号深圳证劵交易所广场3504（邮编：518035</li>
 
+              </ul>
             </div>
 
 
@@ -44,24 +72,13 @@
 
 
     <%-include("lz_foot")%>
-      <script src="/js/jquery.min.js" charset="utf-8"></script>
-      <script type="text/javascript">
-        var tabs = document.getElementsByClassName('gy-tabs')[0].children;
-        var contents = document.getElementsByClassName("gy-show")[0].children;
-
-        for (var i = 0; i < tabs.length; i++) {
-
-          tabs[i].index = i;
-          tabs[i].onclick = function(event) {
-            for (var j = 0; j < tabs.length; j++) {
-              tabs[j].className = "";
-              contents[j].className = "";
-            }
-            this.className = "gy-active";
-            contents[this.index].className = "gy-active";
-          };
-        }
-      </script>
+    <script src="/js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var ul = $('ul li');
+      ul.click(function() {
+        location.href = $(this).find('a')[0].href;
+      });
+    </script>
 
 </body>
 
