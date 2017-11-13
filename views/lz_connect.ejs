@@ -66,7 +66,7 @@
       </div>
 
 
-      <div class="lz-con-con-con">
+      <!-- <div class="lz-con-con-con">
         <h1>数据1</h1>
         <ul>
           <li>
@@ -94,66 +94,37 @@
             <div>立即加入</div>
           </li>
         </ul>
-      </div>
-      <% for (data of list) {%>
-        <div class="lz-con-con-con">
-          <h1>数据1</h1>
-          <ul>
-            <li>
-              <span>4</span>
-              <sub>%</sub>
-              <p>测算年化收益率</p>
-            </li>
-            <li>
-              <p>借款期限：<span>560天</span></p>
-              <p>还款方式：<span>利随本清</span></p>
-            </li>
-            <li>
-              <p>筹集金额：<span>60万元</span></p>
-              <p>产品星级：
-                <div>
-                  <div style="width: ;100%"></div>
-                </div>
-              </p>
-            </li>
-            <li>
-              <p>投资进度：<span>90%</span><i><i></i></i></p>
-              <p>可投金额：<span>87100元</span></p>
-            </li>
-            <li>
-              <div>立即加入</div>
-            </li>
-          </ul>
-        </div>
-      <% } %>
+      </div> -->
+
       <!-- Income 收益 -->
-      <% for (data of list) {%>
+      <% for (var data of list) {%>
       <div class="lz-con-con-con">
-        <h1><%= title %></h1>
+        <h1><%= data.title %></h1>
+
         <ul>
           <li>
-            <span><%= incomeNum %></span>
-            <sub><%= income %></sub>
+            <span><%= data.incomeNum %></span>
+            <sub><%= data.income %></sub>
             <p>测算年化收益率</p>
           </li>
           <li>
-            <p>借款期限：<span><%= year %>天</span></p>
-            <p>还款方式：<span><%= yearType %></span></p>
+            <p>借款期限：<span><%= data.year %>天</span></p>
+            <p>还款方式：<span><%= data.yearType %></span></p>
           </li>
           <li>
-            <p>筹集金额：<span><%= money %></span></p>
+            <p>筹集金额：<span><%= data.money %></span></p>
             <p>产品星级：
               <div>
-                <div style="width: <%= star %>%;"></div>
+                <div style="width: <%= data.star %>%;"></div>
               </div>
             </p>
           </li>
           <li>
-            <p>投资进度：<span><%= program %>%</span><i><i  style="width: <%= program %>%;"></i></i></p>
-            <p>可投金额：<span><%= mayMoney %></span></p>
+            <p>投资进度：<span><%= data.program %>%</span><i><i  style="width: <%= data.program %>%;"></i></i></p>
+            <p>可投金额：<span><%= data.mayMoney %></span></p>
           </li>
           <li>
-            <div data-target= <%= src %>>立即加入</div>
+            <div data-target= <%= data.src %>>立即加入</div>
           </li>
         </ul>
       </div>

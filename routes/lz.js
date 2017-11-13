@@ -51,14 +51,34 @@ var obj = {
   src: '/lz'
 };
 
-
+var head_li = {one: "", two: "active", three: "", four: "", five: "", six: ""};
 /* GET home page. */
-lz.get('/', function(req, res, next) {
-  res.render('lz_connect', obj);
-});
+// lz.get('/', function(req, res, next) {
+//   res.render('lz_connect', {obj, one: "", two: "active", three: "", four: "", five: "", six: "", seven: ""});
+// });
 
 lz.get('/head', function(req, res, next) {
   res.render('lz_connect', obj);
+});
+
+lz.get('/', function(req, res, next) {
+  res.status(200);
+  WoYaoTouZi.find( {}, null, function(err, docs) {
+    if (!err) {
+      if (docs[0]) {
+        if (docs[0].passwd === req.body.passwd) {
+          console.log(docs);
+          res.render('lz_connect', {list: docs, one: "", two: "active", three: "", four: "", five: "", six: ""});
+        } else {
+          res.render('index', head_li);
+        };
+      } else {
+        res.render('index', head_li);
+      };
+    } else {
+      res.render('index', head_li);
+    };
+  });
 });
 
 

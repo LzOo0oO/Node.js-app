@@ -36,25 +36,48 @@ var options = {root: __dirname + "/../public"};
 
 
 
-/* GET home page. */
+/* login 注册。。。logon 登入 */
 g.get('/logon', function(req, res, next) {
   res.sendFile("html/G_deng.html", options);
 });
+
+g.post('/logon', function(req, res, next) {
+  res.status(200);
+  AddCommonUser.find({user: req.body.user}, null, function(err, docs) {
+    if (!err) {
+      if (docs[0]) {
+        if (docs[0].passwd === req.body.passwd) {
+          console.log(docs[0]);
+          console.log(req.body);
+          res.json({login: true, url: '/'});
+        } else {
+          res.json({login: false});
+        };
+      } else {
+        res.json({login: false});
+      };
+    } else {
+      res.json({login: false});
+    };
+  });
+});
+
 
 g.get('/login', function(req, res, next) {
   res.sendFile("html/G_zhu.html", options);
 });
 
 g.post('/login', function(req, res, next) {
-  // if (req.body.passwd == ???) {
-  //   res.json({login: true, html: '/'});
-  // } else {
-  //   res.json({login: false});
-  // };
 
+  new AddCommonUser({user: res.body.user, passwd: res.body.passwd}).save(function(err, data) {
+    if (!err) {
+      console.log(`Mongoose 数据库: ${data.user} ---数据添加成功。。。`);
+      console.log(data);
 
-  res.json({login: false});
-
+    } else {
+      res.json({login: false});
+    };
+  });
 });
 
 

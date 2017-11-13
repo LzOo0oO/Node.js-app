@@ -44,9 +44,35 @@
     </div>
   </div>
 
-  <script src="../javascripts/js/jquery.min.js" charset="utf-8"></script>
+  <script src="../js/jquery.min.js" charset="utf-8"></script>
   <script type="text/javascript">
+  $(".put1").focus(function(){
+    $(".tu3").attr("src", "../images/success.png");
+  });
+  $(".put2").focus(function(){
+    $(".tu3").attr("src", "../images/log-pwd.png");
+  });
 
+  $("#login").click(function() {
+    $.ajax({
+      method: "post",
+      url: "/g/login",
+      data: {
+        user: $("#user").val(),
+        passwd: $("#passwd").val()
+      },
+    }).done(function(data, status, jqXHR) {
+      console.log(data);
+      if (data.login) {
+        window.locat = "/";
+      } else {
+        alert("注册失败。。。");
+      };
+    }).fail(function (jqXHR, status, err) {
+      console.log(err);
+    });
+
+  });
   </script>
   </body>
 </html>

@@ -227,13 +227,13 @@
         $(".xs-que-2").css("background", "url('/images/001.png')");
         $(this).prev().css("background", "url('/images/002.png')");
 
-        // if ($(this).prev().data("index") == 1){
-        //   $(this).prev().css("background", "url('/images/002.png')");
-        //   $(this).prev().data("index", "2");
-        // } else {
-        //   $(this).prev().css("background", "url('/images/001.png')");
-        //   $(this).prev().data("index", "1");
-        // };
+        if ($(this).prev().data("index") == 1){
+          $(this).prev().css("background", "url('/images/002.png')");
+          $(this).prev().data("index", "2");
+        } else {
+          $(this).prev().css("background", "url('/images/001.png')");
+          $(this).prev().data("index", "1");
+        };
       });
     </script>
   </body>

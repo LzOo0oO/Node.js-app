@@ -5,28 +5,28 @@ var l = express.Router();
 
 
 /* GET home page. */
+var head_li = {one: "", two: "", three: "", four: "", five: "", six: "active"};
 
-
-l.get('/about/gltd',function(req,res){
-  res.render('l-gy-gltd')
+l.get('/',function(req,res){
+  res.render('l-gy', head_li);
 });
-l.get('/about',function(req,res){
-  res.render('l-gy')
+l.get('/gltd',function(req,res){
+  res.render('l-gy-gltd', head_li);
 });
-l.get('/about/dstd',function(req,res){
-  res.render('l-gy-dstd')
+l.get('/dstd',function(req,res){
+  res.render('l-gy-dstd', head_li);
 });
-l.get('/about/fzlc',function(req,res){
-  res.render('l-gy-fzlc')
+l.get('/fzlc',function(req,res){
+  res.render('l-gy-fzlc', head_li);
 });
-l.get('/about/hzhb',function(req,res){
-  res.render('l-gy-hzhb')
+l.get('/hzhb',function(req,res){
+  res.render('l-gy-hzhb', head_li);
 });
-l.get('/about/yqlj',function(req,res){
-  res.render('l-gy-yqlj')
+l.get('/yqlj',function(req,res){
+  res.render('l-gy-yqlj', head_li);
 });
-l.get('/about/lxwm',function(req,res){
-  res.render('l-gy-lxwm')
+l.get('/lxwm',function(req,res){
+  res.render('l-gy-lxwm', head_li);
 });
 
 
