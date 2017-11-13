@@ -32,20 +32,20 @@
 
         <div class="kuang">
           <span>登录微金所</span>
-          <div class="tu1"> <img class="tu3" src="../images/success.png" alt=""></div>
+          <div class="tu1"> <img class="tu3" src="../images/success.png" alt="/"></div>
           <!-- <div class="tu2"> <img src="../images/log-pwd.png" alt=""></div> -->
           <i class=" icon iconfont icon-wxbzhanghu"></i>
-          <input  id="user" class="put1" type="text" placeholder="请输入您的手机号或者用户名">
+          <input class="put1" type="text" placeholder="请输入您的手机号">
           <i class=" icon iconfont icon-iconfontwujingongju"></i>
-          <input id="passwd" class="put2" type="text" placeholder="密码">
+          <input id="user" class="put2" type="password" placeholder="密码">
 
-          <input class="put3" type="checkbox" name="" value=""><i class="put3_1">记住用户名</i> <a href="#"><i class="put3_2">忘记密码？</i></a>
+          <input id="passwd" class="put3" type="checkbox" name="" value=""><i class="put3_1">记住用户名</i> <a href="#"><i class="put3_2">忘记密码？</i></a>
 
           <div id="login" class="denglu">
             <p class="denglu_1"><a href="#">登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</a></p>
           </div>
 
-          <span id="last">还没有账号?</span><a class="last_1" href="#">立即注册</a>
+          <span id="last">还没有账号?</span><a class="last_1" href="/g/">立即注册</a>
         </div>
       </div>
 
@@ -64,34 +64,23 @@
       });
 
       $("#login").click(function() {
-        var a = $("#user").val(),
-            b = $("#passwd").val();
-
-        console.log(a, "a");
-        console.log(b, "b");
-
-        if (!a || !b) {
-          console.log("没有发送");
-        } else {
-          $.ajax({
-            method: "post",
-            url: "/g/logon",
-            data: {
-              user: a,
-              passwd: b
-            },
-          }).done(function(data, status, jqXHR) {
-            console.log(data);
-            if (data.login) {
-              window.location = data.url;
-            } else {
-              alert("用户或者密码错误");
-            };
-          }).fail(function (jqXHR, status, err) {
-            console.log(err);
-          });
-          console.log("发送了。。。");
-        };
+        $.ajax({
+          method: "post",
+          url: "/g/logon",
+          data: {
+            user: $("#user").val(),
+            passwd: $("#passwd").val()
+          },
+        }).done(function(data, status, jqXHR) {
+          console.log(data);
+          if (data.login) {
+            window.locat = "/";
+          } else {
+            alert("用户或者密码错误");
+          };
+        }).fail(function (jqXHR, status, err) {
+          console.log(err);
+        });
 
       });
     </script>
