@@ -280,22 +280,23 @@
 
       <div class="news-right">
         <div class="news-all show">
-
+          <% for (var data of list) {%>
           <div class="active">
+
             <dl class="n-dl ">
               <dt class="n-title">
-              <a href="#">【微还款】 2017年10月30日-2017年11月5日还款公告</a>
+              <a href="#"><%= data.title %></a>
             </dt>
               <dd>
-                <small class="n-date">2017-11-06</small>
+                <small class="n-date"><%= data.incomeNum %></small>
                 <br>
                 <p class="n-content">
-                  各位亲爱的微主： 2017年10月30日-2017年11月5日共355个项目还款， {本金总计}：￥47,979,353.15元， {利息总计}：￥770,206.41元 。 请投资
+                  <%= data.income %>
                 </p>
                 <a href="#" class="n-more">Read more →</a>
               </dd>
             </dl>
-            <dl class="n-dl">
+            <!-- <dl class="n-dl">
               <dt class="n-title">
               <a href="#">【新浪网】 互联网金融平台微金所实缴注册资本增至1亿元</a>
             </dt>
@@ -384,8 +385,9 @@
                   2016年互联网金融真正进入监管元年，最严监管的强势落地让互联网金融行业加速进入洗牌期。“13条禁令”更缩小了平台的业务空间，使本不充裕的优质资产变的更加匮乏。在监管元年以及优质资产“资产荒”双重压力 </p>
                 <a href="#" class="n-more">Read more →</a>
               </dd>
-            </dl>
+            </dl> -->
           </div>
+          <% } %>
 
           <div class="">
 
