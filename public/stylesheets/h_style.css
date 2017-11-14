@@ -150,6 +150,9 @@ body {
 .xs-ding:hover {
   background-color: red;
 }
+.xs-ding a:hover {
+  color: #fff;
+}
 .xs-ding a {
   display: block;
   padding: 15px 10px;
