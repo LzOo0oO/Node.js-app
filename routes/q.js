@@ -8,41 +8,74 @@ db.on('open', () => {console.log("mongoose 数据库开启...")});
 mongoose.connect("mongodb://192.168.0.135/stus", {useMongoClient: true});
 var Schema = mongoose.Schema;
 var xinWenSchema = new Schema({
+  type: String,
   title: String,
   incomeNum: String,
   income: String
 });
 
-// var XinWen = mongoose.model("XinWen", xinWenSchema);
-// new XinWen({
-//   title:"【微动态】《搜狐财经》《国际在线》等多家媒体报道：股权质押或成互联网金融资产端新走向",
-//   incomeNum: 2016-10-17,
-//   income:"2016年互联网金融真正进入监管元年，最严监管的强势落地让互联网金融行业加速进入洗牌期。“13条禁令”更缩小了平台的业务空间，使本不充裕的优质资产变的更加匮乏。在监管元年以及优质资产“资产荒”双重压力"
-// }).save((err, data) => {
-//   if (!err) {
-//     console.log(`mongoose ${data} 数据添加成功.`);
-//   } else {
-//     console.log(err);
-//   };
-// });
+var XinWen = mongoose.model("XinWen", xinWenSchema);
+
+
+new XinWen({
+  type: "专题",
+  title:"【微公告】关于车帮主及金房宝产品提前还款的说明",
+  incomeNum: "2017-10-28",
+  income:"产品星级是上架资产风险定价的核心要素。希望广大投资者时刻把握投资风险。"
+}).save((err, data) => {
+  if (!err) {
+    console.log(`mongoose ${data} 数据添加成功.`);
+  } else {
+    console.log(err);
+  };
+});
 
 
 var head_li = {one: "", two: "", three: "", four: "", five: "active", six: ""};
 
 
+var obj1 = {};
+var obj2 = {};
+var obj3 = {};
+var obj4 = {};
+var obj5 = {};
 
 /* GET home page. */
 q.get('/', function(req, res, next) {
   res.status(200);
-  WoYaoTouZi.find( {}, null, function(err, docs) {
+
+
+  XinWen.find({}, null, function(err, docs) {
     if (!err) {
       if (docs[0]) {
-        if (docs[0].passwd === req.body.passwd) {
-          console.log(docs);
-          res.render('q_xw', {list: docs, one: "", two: "", three: "", four: "", five: "active", six: ""});
-        } else {
-          res.render('index', head_li);
-        };
+        // res.render('q_xw', {list: docs, one: "", two: "", three: "", four: "", five: "active", six: ""});
+        obj1 = docs;
+      } else {
+        res.render('index', head_li);
+      };
+    } else {
+      res.render('index', head_li);
+    };
+  }).sort({title: 1});
+
+  XinWen.find({type: "新闻"}, null, function(err, docs) {
+    if (!err) {
+      if (docs[0]) {
+        // res.render('q_xw', {list: docs, one: "", two: "", three: "", four: "", five: "active", six: ""});
+        obj2 = docs;
+      } else {
+        res.render('index', head_li);
+      };
+    } else {
+      res.render('index', head_li);
+    };
+  }).sort({title: 1});
+
+  XinWen.find({type:"头条"}, null, function(err, docs) {
+    if (!err) {
+      if (docs[0]) {
+        // res.render('q_xw', {list: docs, one: "", two: "", three: "", four: "", five: "active", six: ""});
+        obj3 = docs;
       } else {
         res.render('index', head_li);
       };
@@ -50,6 +83,31 @@ q.get('/', function(req, res, next) {
       res.render('index', head_li);
     };
   });
+
+  XinWen.find({type:"资讯"}, null, function(err, docs) {
+    if (!err) {
+      if (docs[0]) {
+        // res.render('q_xw', {list: docs, one: "", two: "", three: "", four: "", five: "active", six: ""});
+        obj4 = docs;
+      } else {
+        res.render('index', head_li);
+      };
+    } else {
+      res.render('index', head_li);
+    };
+  }).sort({title: 1});
+  XinWen.find( {type: "专题"}, null, function(err, docs) {
+    if (!err) {
+      if (docs[0]) {
+        res.render('q_xw', {list1: obj1, list2: obj2, list3: obj3 ,list4: obj4, list5: obj5, one: "", two: "", three: "", four: "", five: "active", six: ""});
+        obj5 = docs;
+      } else {
+        res.render('index', head_li);
+      };
+    } else {
+      res.render('index', head_li);
+    };
+  }).sort({title: 1});
 });
 
 
