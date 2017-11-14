@@ -33,9 +33,9 @@
       <div class="zhuce">
         <span>注册微金所</span>
         <i class=" icon iconfont icon-wxbzhanghu"></i>
-        <input class="put1" type="text" placeholder="请输入您的手机号">
+        <input id="user" class="put1" type="text" placeholder="请输入您的手机号">
         <i class=" icon iconfont icon-iconfontwujingongju"></i>
-        <input class="put2" type="password" placeholder="密码">
+        <input id="passwd" class="put2" type="password" placeholder="密码">
         <i class=" icon iconfont icon-iconfontwujingongju logo"></i>
         <input class="put3" type="password" placeholder="确认密码">
         <i class=" icon iconfont icon-gerenshimingrz"></i>
@@ -81,12 +81,12 @@
     }).done(function(data, status, jqXHR) {
       console.log(data);
       if (data.login) {
-        window.locat = "/";
+        window.location = data.url;
       } else {
         alert("注册失败。。。");
       };
     }).fail(function (jqXHR, status, err) {
-      console.log(err);
+      console.log(err, status, "ASD");
     });
 
   });

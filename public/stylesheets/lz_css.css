@@ -56,15 +56,15 @@
     width: 1200px;
     margin-top: 20px;
     height: 200px; }
-    .lz-body-foot .lz-con-foot .lz-foot-foot > h4 {
+    .lz-body-foot .lz-con-foot .lz-foot-foot > h4.lz-foot-foot-h4 {
       margin: 0;
       padding: 0; }
-      .lz-body-foot .lz-con-foot .lz-foot-foot > h4 ul {
+      .lz-body-foot .lz-con-foot .lz-foot-foot > h4.lz-foot-foot-h4 > ul {
         margin: 20px 0; }
-        .lz-body-foot .lz-con-foot .lz-foot-foot > h4 ul li {
+        .lz-body-foot .lz-con-foot .lz-foot-foot > h4.lz-foot-foot-h4 > ul > li {
           float: left;
           margin-right: 20px; }
-        .lz-body-foot .lz-con-foot .lz-foot-foot > h4 ul li:last-child {
+        .lz-body-foot .lz-con-foot .lz-foot-foot > h4.lz-foot-foot-h4 > ul li:last-child {
           float: right;
           margin-right: 0; }
     .lz-body-foot .lz-con-foot .lz-foot-foot > ul li {
@@ -184,12 +184,14 @@
         position: absolute;
         top: 0px;
         right: 0px; }
+  .lz-body-con .lz-connect-con {
+    min-height: 800px; }
   .lz-body-con .lz-con-con {
     padding: 20px 30px;
     margin: 30px 0;
     font-size: 14px;
     background-color: #fff; }
-    .lz-body-con .lz-con-con > div {
+    .lz-body-con .lz-con-con > div > div {
       border-bottom: 1px solid #aaa; }
     .lz-body-con .lz-con-con .lz-con-con-header {
       height: 45px; }
@@ -201,6 +203,7 @@
         line-height: 20px;
         float: left;
         padding: 5px; }
+      .lz-body-con .lz-con-con .lz-con-con-header > dl dd.active,
       .lz-body-con .lz-con-con .lz-con-con-header > dl dd:hover {
         color: red;
         cursor: pointer; }

@@ -44,6 +44,7 @@ g.get('/logon', function(req, res, next) {
 g.post('/logon', function(req, res, next) {
   res.status(200);
   AddCommonUser.find({user: req.body.user}, null, function(err, docs) {
+
     if (!err) {
       if (docs[0]) {
         if (docs[0].passwd === req.body.passwd) {
@@ -68,16 +69,21 @@ g.get('/login', function(req, res, next) {
 });
 
 g.post('/login', function(req, res, next) {
+  console.log(req.body);
+  res.status(200);
+  new AddCommonUser({user: req.body.user, passwd: req.body.passwd}).save(function(err, data) {
 
-  new AddCommonUser({user: res.body.user, passwd: res.body.passwd}).save(function(err, data) {
+    console.log("err=====", err);
     if (!err) {
+      console.log("asaS");
       console.log(`Mongoose 数据库: ${data.user} ---数据添加成功。。。`);
       console.log(data);
-
+      res.json({login: true, url: '/g/logon'});
     } else {
       res.json({login: false});
     };
   });
+
 });
 
 

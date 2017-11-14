@@ -35,7 +35,8 @@ var WoYaoTouZi = mongoose.model("Three", touZiSchema);
 //   mayMoney: "666万元",
 //   src: '/lz'
 // }).save((err, data) => {console.log(err, data)});
-
+// 一月：31天二月：59天三月：90天四月：120天，五月：151天六月：181天
+// 七月：212天八月：243天9月：273天10月：304天11月：334天12月：365天
 
 var obj = {
   list: [1, 2, 3],
@@ -63,28 +64,55 @@ lz.get('/head', function(req, res, next) {
 
 lz.get('/', function(req, res, next) {
   res.status(200);
-  WoYaoTouZi.find( {}, null, function(err, docs) {
+  WoYaoTouZi.find({}, null, function(err, docs) {
     if (!err) {
       if (docs[0]) {
-        if (docs[0].passwd === req.body.passwd) {
-          console.log(docs);
-          res.render('lz_connect', {list: docs, one: "", two: "active", three: "", four: "", five: "", six: ""});
-        } else {
-          res.render('index', head_li);
-        };
+        console.log(docs.length);
+        res.render('lz_connect', {pageLength: docs.length,list: docs, one: "", two: "active", three: "", four: "", five: "", six: ""});
       } else {
         res.render('index', head_li);
       };
     } else {
       res.render('index', head_li);
     };
-  });
+  }).limit(3);
 });
 
+lz.post('/', function (req, res, next) {
+  console.log(req.body.numOne);
+
+  var objSort = {}, objData = {};
+  if (req.body.type == "income") {
+    objSort = {incomeNum: req.body.sort};
+  } else if (req.body.type == "year") {
+    objSort = {year: req.body.sort};
+  } else if (req.body.type == "type") {
+    objSort = {title: req.body.sort};
+  } else if (req.body.type == "star") {
+    objSort = {star: req.body.sort};
+  } else if (req.body.type == "all") {
+    objSort = {_id: req.body.sort};
+  };
+
+  objData = {year: {$gte: req.body.min1,$lte: req.body.max1}, incomeNum: {$gte: req.body.min2,$lte: req.body.max2}, title: req.body.name};
+  objData = req.body.name === "" ? {year: {$gte: req.body.min1,$lte: req.body.max1}, incomeNum: {$gte: req.body.min2,$lte: req.body.max2}} : objData;
+  console.log(objData, objSort);
+
+  var pageLength = 0;
+  WoYaoTouZi.find(objData, null, function(err, docs) {
+    pageLength = docs.length;
+    WoYaoTouZi.update({},{$set: {pageLength: pageLength}});
+  });
 
 
-
-
+  WoYaoTouZi.find(objData, null, function(err, docs) {
+    if (!err) {
+      res.json(docs);
+    } else {
+      res.json({find: false});
+    };
+  }).sort(objSort).skip(+ req.body.numOne).limit(3);
+});
 
 
 

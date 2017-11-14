@@ -1,10 +1,8 @@
 /*
 *page plugin 1.0   2016-09-29 by cary
 */
-console.log("AAA");
 (function ($) {
   //默认参数
-  console.log("BBBB");
   var defaults = {
     totalPages: 9,//总页数
     liNums: 9,//分页的数字按钮数(建议取奇数)
@@ -58,7 +56,7 @@ console.log("AAA");
           dataHtml += '<div class="prv fr">' + opts.prv + '</div>';
       }
 
-      console.log(obj);
+      // console.log(obj);
 
       obj.html(dataHtml).off("click");//防止插件重复调用时，重复绑定事件
 
