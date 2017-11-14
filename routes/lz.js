@@ -6,6 +6,7 @@ var db = mongoose.connection;
 db.on('error', (err) => {console.log(`mongoose ^^ ${err}`)});
 db.on('open', () => {console.log("mongoose 数据库开启...")});
 mongoose.connect("mongodb://192.168.0.135/stus", {useMongoClient: true});
+
 var Schema = mongoose.Schema;
 var touZiSchema = new Schema({
   title: String,
@@ -35,8 +36,7 @@ var WoYaoTouZi = mongoose.model("Three", touZiSchema);
 //   mayMoney: "666万元",
 //   src: '/lz'
 // }).save((err, data) => {console.log(err, data)});
-// 一月：31天二月：59天三月：90天四月：120天，五月：151天六月：181天
-// 七月：212天八月：243天9月：273天10月：304天11月：334天12月：365天
+
 
 var obj = {
   list: [1, 2, 3],
@@ -111,6 +111,7 @@ lz.post('/', function (req, res, next) {
     } else {
       res.json({find: false});
     };
+  // }).sort(objSort);
   }).sort(objSort).skip(+ req.body.numOne).limit(3);
 });
 
